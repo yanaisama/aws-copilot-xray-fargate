@@ -1,0 +1,17 @@
+{
+  "name": "xray-copilot-service-a",
+  "version": "1.0.0",
+  "description": "Express application with X-Ray traces",
+  "author": "Luiz Yanai <lyanai@amazon.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "latest",
+    "aws-xray-sdk": "^3.3.4",
+    "body-parser": "latest",
+    "express": "latest",
+    "querystring": "latest"
+  }
+}

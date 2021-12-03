@@ -1,0 +1,17 @@
+{
+  "name": "xray-copilot-service-b",
+  "version": "1.0.0",
+  "description": "Express backend with X-Ray traces and calling DynamoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Luiz Yanai <lyanai@amazon.com>",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1042.0",
+    "aws-xray-sdk": "^3.3.4",
+    "express": "^4.17.1"
+  }
+}
