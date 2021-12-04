@@ -27,14 +27,17 @@ const apiCNAME = process.env.API_CNAME || 'localhost';
 // App
 const app = express();
 
+// Use plugins to record information about the service hosting your application.
 XRay.config([XRay.plugins.ECSPlugin]);
-XRay.middleware.enableDynamicNaming();
+//XRay.middleware.enableDynamicNaming();
 
+// https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-nodejs-middleware.html
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(XRay.express.openSegment('service-a'));
 
 app.get('/health', (req, res) => {
-  console.log('Teste' );
+  var seg = XRay.getSegment();
+  seg.addAnnotation('service', 'service-a');
   res.status(200).send("Healthy");
   
 });
